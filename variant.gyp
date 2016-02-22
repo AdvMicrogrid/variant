@@ -20,7 +20,7 @@
         "test/t/recursive_wrapper.cpp",
         "test/t/sizeof.cpp",
         "test/t/unary_visitor.cpp",
-        "test/t/variant.cpp"
+        "test/t/variant.cpp",
         "test/t/variant_custom.cpp"
       ],
       "xcode_settings": {

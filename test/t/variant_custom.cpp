@@ -23,33 +23,48 @@ namespace detail {
     };
 
     class Custom1 : public Base {
-        std::string this;
+        std::string this_;
         std::string that;
         std::string apple;
         std::string orange;
         std::string pear;
         std::string apricot;
-        int custom1_int;
+        int custom1_int = -1;
+        ~Custom1() {
+            if (custom1_int != -1) {
+                std::clog << "trouble\n";
+            }
+        }
     };
 
     class Custom2 : public Base {
-        std::string this;
+        std::string this_;
         std::string that;
         std::string apple;
         std::string orange;
         std::string pear;
         std::string apricot;
-        int custom2_int;
+        int custom2_int = -1;
+        ~Custom2() {
+            if (custom2_int != -1) {
+                std::clog << "trouble\n";
+            }
+        }
     };
 
     class Custom3 : public Base {
-        std::string this;
+        std::string this_;
         std::string that;
         std::string apple;
         std::string orange;
         std::string pear;
         std::string apricot;
-        int custom3_int;
+        int custom3_int = -1;
+        ~Custom3() {
+            if (custom3_int != -1) {
+                std::clog << "trouble\n";
+            }
+        }
     };
 
     using variant_type = mapbox::util::variant<detail::Custom1 *,
@@ -153,7 +168,6 @@ TEST_CASE("storing pointer to complex custom classes works")
     guard.release();
     CHECK( instance != nullptr);
     delete instance;
-    CHECK( instance == nullptr);
     std::clog << "here\n";
 
 }
